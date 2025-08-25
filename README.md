@@ -2,7 +2,8 @@
 
 这是一个基于 **Streamlit** 的网页工具，用于快速计算 qPCR 实验的相对表达量（ΔΔCt 方法）。  
 **作者：** bilibili @ 外科小小硕  
-
+网页在此：https://qpcrsuper.streamlit.app/
+使用教程看哔站！（外科小小硕）
 ---
 
 ## ✨ 功能特色
