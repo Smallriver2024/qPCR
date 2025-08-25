@@ -116,6 +116,17 @@ if show_stats:
     st.dataframe(group_stats, use_container_width=True)
 
 buf = io.BytesIO()
+try:
+    import openpyxl  # noqa: F401
+    excel_engine = "openpyxl"
+except Exception:
+    try:
+        import xlsxwriter  # noqa: F401
+        excel_engine = "xlsxwriter"
+    except Exception:
+        st.error("未检测到 Excel 写入引擎：请在 requirements.txt 中添加 `openpyxl` 或 `xlsxwriter`。")
+        st.stop()
+
 with pd.ExcelWriter(buf, engine="openpyxl") as w:
     work.to_excel(w, index=False, sheet_name="qpcr_results")
     pd.DataFrame({
