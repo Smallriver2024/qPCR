@@ -5,7 +5,7 @@ import streamlit as st
 
 st.set_page_config(page_title="qPCR ΔΔCt 计算器", page_icon="🧪", layout="wide")
 st.title("qPCR ΔΔCt 在线计算器")
-st.caption("复制粘贴或上传数据 → 选择列与对照组 → 一键计算并导出 Excel，\t Github:https://github.com/Smallriver2024/qPCR")
+st.caption("复制粘贴或上传数据 → 选择列与对照组 → 一键计算并导出 ExcelR")
 
 # -------------------- 小工具 --------------------
 def read_input(pasted: str, uploaded):
