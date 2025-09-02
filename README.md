@@ -51,5 +51,3 @@
   - 参数设置  
   - 分组统计  
 
-  <img width="1320" height="752" alt="result-demo" src="https://github.com/user-attachments/assets/08245280-4321-4716-9ec2-874bb8ff4eae" />
-
