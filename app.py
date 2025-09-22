@@ -98,7 +98,7 @@ if len(num_candidates) < 2:
     st.error("检测到的数值列不足（至少需要 2 列 Ct）。")
     st.stop()
 
-default_hk = pick_default(num_candidates, ["gapdh","actb","18s","reference"], fallback_idx=1)
+default_hk = pick_default(num_candidates, ["gapdh","gap","actin","actb","18s","reference"], fallback_idx=1)
 # 在排除管家列后的候选集中选择目标列（仍然优先匹配关键词，找不到就取第一个）
 def pick_default_excluding(cols, keywords, exclude, fallback_idx=0):
     pool = [c for c in cols if c != exclude]
