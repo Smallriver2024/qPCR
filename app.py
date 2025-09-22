@@ -9,7 +9,7 @@ from typing import List, Tuple
 from scipy import stats
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="qPCR ΔΔCt 计算器", page_icon="🧪", layout="wide")
+st.set_page_config(page_title="qPCR ΔΔCt 计算器", page_icon="💻", layout="wide")
 st.title("qPCR ΔΔCt 在线计算器")
 st.caption("复制粘贴或上传数据 → 选择列与对照组 → 一键计算➕绘图➕导出计算结果")
 
