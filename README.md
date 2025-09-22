@@ -51,3 +51,8 @@
   - 参数设置  
   - 分组统计  
 
+---
+# 20250922 更新
+## 本次更新新增了统计分析和作图的功能
+### 可以选择多重比较和矫正方法，并直接作图
+<img width="3686" height="1868" alt="image" src="https://github.com/user-attachments/assets/164a2035-45ee-41c2-8891-1f24409b8928" />
