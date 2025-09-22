@@ -99,15 +99,35 @@ if len(num_candidates) < 2:
     st.stop()
 
 default_hk = pick_default(num_candidates, ["gapdh","actb","18s","reference"], fallback_idx=1)
-default_tg = pick_default(num_candidates, ["mc","target","gene","ct"], fallback_idx=0)
+# 在排除管家列后的候选集中选择目标列（仍然优先匹配关键词，找不到就取第一个）
+def pick_default_excluding(cols, keywords, exclude, fallback_idx=0):
+    pool = [c for c in cols if c != exclude]
+    return pick_default(pool, keywords, fallback_idx=fallback_idx) if pool else None
 
+default_tg = pick_default_excluding(
+    num_candidates,
+    ["mc","target","gene","ct"],
+    exclude=default_hk,
+    fallback_idx=0
+)
+# -------------------- 选择列 --------------------
 col1, col2 = st.columns(2)
 with col1:
-    target_col = st.selectbox("目标基因 Ct 列", options=num_candidates,
-                              index=num_candidates.index(default_tg) if default_tg in num_candidates else 0)
+    # 目标列下拉：默认把管家列从选项里排除；若只剩一列或空，则回退为原候选集
+    tg_options = [c for c in num_candidates if c != default_hk] or num_candidates
+    target_col = st.selectbox(
+        "目标基因 Ct 列",
+        options=tg_options,
+        index=tg_options.index(default_tg) if default_tg in tg_options else 0
+    )
 with col2:
-    hk_col = st.selectbox("管家基因 Ct 列", options=num_candidates,
-                          index=num_candidates.index(default_hk) if default_hk in num_candidates else min(1, len(num_candidates)-1))
+    hk_options = num_candidates
+    hk_index = hk_options.index(default_hk) if (default_hk in hk_options) else min(1, len(hk_options)-1)
+    hk_col = st.selectbox(
+        "管家基因 Ct 列",
+        options=hk_options,
+        index=hk_index
+    )
 
 # -------------------- 计算与导出 --------------------
 if not run:
