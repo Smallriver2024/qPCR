@@ -272,7 +272,15 @@ for (i, (g1, g2)) in enumerate(pairs):
     ax.text((x1 + x2) / 2, y + ymax_data * 0.012, label,
             ha="center", va="bottom", fontsize=9)
 
-st.pyplot(fig, use_container_width=True)
+fig.tight_layout()
+_png = _io.BytesIO()
+fig.savefig(_png, format="png", dpi=300, bbox_inches="tight")  # 导出高分辨率
+_png.seek(0)
+
+# 三列布局：中间列居中显示
+col_l, col_c, col_r = st.columns([1, 2, 1])
+with col_c:
+    st.image(_png, use_column_width=False, width=420)
 
 # ---- 导出两两比较结果表 ----
 comp_df = pd.DataFrame({
