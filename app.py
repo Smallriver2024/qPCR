@@ -281,7 +281,7 @@ _png.seek(0)
 # 三列布局：中间列居中显示
 col_l, col_c, col_r = st.columns([1, 2, 1])
 with col_c:
-    st.image(_png, use_column_width=False, width=420)
+    st.image(_png, use_container_width=False, width=420)
 
 # ---- 导出两两比较结果表 ----
 comp_df = pd.DataFrame({
