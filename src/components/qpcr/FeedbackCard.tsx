@@ -14,7 +14,7 @@
 import { useState, type FormEvent } from "react";
 import { Alert, Card, CardTitle, FieldLabel, KimiButton, KimiSelect } from "./ui.tsx";
 
-const FORMSUBMIT_ALIAS = ""; // ← 在这里填入 FormSubmit 随机字符串别名（不含邮箱）
+const FORMSUBMIT_ALIAS = "520865fe4089fed0f6de77c9c054981d"; // FormSubmit 随机字符串别名（隐藏站长邮箱）
 
 const FEEDBACK_TYPES = ["问题反馈", "功能建议", "仪器格式适配请求", "其他"];
 
