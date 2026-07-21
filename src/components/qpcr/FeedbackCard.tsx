@@ -13,7 +13,7 @@
 import { useState, type FormEvent } from "react";
 import { Alert, Card, CardTitle, FieldLabel, KimiButton, KimiSelect } from "./ui.tsx";
 
-const WEB3FORMS_ACCESS_KEY = ""; // ← 在这里填入 Web3Forms Access Key
+const WEB3FORMS_ACCESS_KEY = "f909e50c-a29d-414f-ad81-9e629e6fab7c"; // Web3Forms Access Key（公开表单标识，不含邮箱）
 
 const FEEDBACK_TYPES = ["问题反馈", "功能建议", "仪器格式适配请求", "其他"];
 
