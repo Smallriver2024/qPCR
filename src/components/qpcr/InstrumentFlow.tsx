@@ -17,6 +17,7 @@ import {
   type LongRow,
 } from "@/lib/parsers.ts";
 import { fileToGrid, parseInstrumentFile } from "@/lib/fileio.ts";
+import { downloadInstrumentExample } from "@/lib/templates.ts";
 import { fmt4, type PreparedTable } from "@/lib/analysis.ts";
 import { Alert, CardTitle, DataTable, FieldLabel, KimiButton, KimiSelect } from "./ui.tsx";
 
@@ -418,6 +419,20 @@ export function InstrumentFlow({
   return (
     <div className="space-y-5">
       <UploadZone onFiles={addFiles} />
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-xs leading-[18px] text-label-tertiary">
+          不确定该传什么文件？下载示例看看：
+        </span>
+        <KimiButton variant="outline" onClick={() => downloadInstrumentExample("quantstudio")}>
+          QuantStudio 示例（.txt）
+        </KimiButton>
+        <KimiButton variant="outline" onClick={() => downloadInstrumentExample("biorad")}>
+          Bio-Rad CFX 示例（.csv）
+        </KimiButton>
+        <span className="text-xs leading-[18px] text-label-tertiary">
+          可直接上传到上方体验完整流程
+        </span>
+      </div>
       {parseError ? <Alert kind="error">{parseError}</Alert> : null}
 
       {reports.length > 0 ? (

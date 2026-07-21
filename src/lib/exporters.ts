@@ -4,7 +4,8 @@
 import * as XLSX from "xlsx";
 import { ADJUST_LABELS, fmtG3, TEST_LABELS, type AnalysisResult } from "./analysis.ts";
 
-function downloadBlob(filename: string, blob: Blob): void {
+/** 触发浏览器下载。 */
+export function downloadBlob(filename: string, blob: Blob): void {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;

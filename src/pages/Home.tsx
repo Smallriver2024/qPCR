@@ -30,6 +30,8 @@ import {
   type TestKind,
 } from "@/lib/analysis.ts";
 import { exportChartPng, exportCsv, exportExcel } from "@/lib/exporters.ts";
+import { downloadOrganizedTemplate } from "@/lib/templates.ts";
+import { FeedbackCard } from "@/components/qpcr/FeedbackCard.tsx";
 
 type InputMode = "paste" | "upload" | "instrument";
 
@@ -229,6 +231,14 @@ export default function Home() {
                     <Alert kind="error">{uploadError}</Alert>
                   </div>
                 ) : null}
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <KimiButton variant="outline" onClick={downloadOrganizedTemplate}>
+                    下载整理表模板（.xlsx）
+                  </KimiButton>
+                  <span className="text-xs leading-[18px] text-label-tertiary">
+                    含示例数据与填写说明，把自己的数据填进去后直接上传
+                  </span>
+                </div>
               </div>
             ) : null}
 
@@ -459,6 +469,9 @@ export default function Home() {
               </Card>
             </>
           ) : null}
+
+          {/* 意见反馈（无论是否出结果都可见） */}
+          <FeedbackCard />
         </div>
       </main>
 
