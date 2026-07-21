@@ -1,19 +1,20 @@
 /**
  * FeedbackCard.tsx — 意见反馈
  *
- * 通过 Web3Forms（https://web3forms.com）把表单内容直接发送到站长邮箱：
- * 站长邮箱不会出现在前端代码里，访问者看到的是表单而不是邮箱地址。
- * Access Key 是公开的表单端点标识（非密钥、不含邮箱），可安全提交到仓库。
+ * 通过 FormSubmit（https://formsubmit.co）把表单内容直接发送到站长邮箱：
+ * 前端代码里只放「随机字符串别名」，站长邮箱不出现在代码和页面上，
+ * 访问者看到的是表单而不是邮箱地址。AJAX 端点支持跨域，静态站可用。
  *
  * 配置方法（一次性）：
- *   1. 打开 https://web3forms.com ，输入站长邮箱，点 Create Access Key；
- *   2. 到邮箱查收 Access Key；
- *   3. 填到下面常量里，重新构建部署即可。
+ *   1. 向 https://formsubmit.co/ajax/{站长邮箱} POST 一次，触发激活邮件；
+ *   2. 到邮箱点击 "Activate Form" 完成激活；
+ *   3. 确认邮箱地址后 FormSubmit 会提供随机字符串（Invisible emails 功能），
+ *      填到下面常量里，重新构建部署即可。
  */
 import { useState, type FormEvent } from "react";
 import { Alert, Card, CardTitle, FieldLabel, KimiButton, KimiSelect } from "./ui.tsx";
 
-const WEB3FORMS_ACCESS_KEY = "f909e50c-a29d-414f-ad81-9e629e6fab7c"; // Web3Forms Access Key（公开表单标识，不含邮箱）
+const FORMSUBMIT_ALIAS = ""; // ← 在这里填入 FormSubmit 随机字符串别名（不含邮箱）
 
 const FEEDBACK_TYPES = ["问题反馈", "功能建议", "仪器格式适配请求", "其他"];
 
@@ -25,28 +26,28 @@ export function FeedbackCard() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
-  const configured = WEB3FORMS_ACCESS_KEY.length > 0;
+  const configured = FORMSUBMIT_ALIAS.length > 0;
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
     if (!message.trim() || status === "sending") return;
     setStatus("sending");
-    fetch("https://api.web3forms.com/submit", {
+    fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_ALIAS}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        access_key: WEB3FORMS_ACCESS_KEY,
-        subject: `qPCR 计算器反馈｜${type}`,
-        from_name: "qPCR ΔΔCt 计算器",
-        botcheck: "", // 反垃圾蜜罐（隐藏字段，正常用户为空）
+        _subject: `qPCR 计算器反馈｜${type}`,
+        _template: "table", // 邮件用表格模板，更易读
+        _captcha: "false", // 站内表单 + 蜜罐即可，不要求访客过验证码
+        _honey: "", // 反垃圾蜜罐（隐藏字段，正常用户为空）
         反馈类型: type,
         联系方式: contact.trim() || "（未留）",
         message: message.trim(),
       }),
     })
       .then((r) => r.json())
-      .then((data: { success?: boolean }) => {
-        if (data.success) {
+      .then((data: { success?: boolean | string }) => {
+        if (data.success === true || data.success === "true") {
           setStatus("success");
           setMessage("");
         } else {
