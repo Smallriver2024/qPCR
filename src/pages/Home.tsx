@@ -397,7 +397,7 @@ export default function Home() {
                   作图
                 </CardTitle>
                 <div className="flex justify-center">
-                  <div className="w-full max-w-[560px]">
+                  <div className="w-full max-w-[640px]">
                     <BarChart
                       ref={svgRef}
                       levels={result.levels}

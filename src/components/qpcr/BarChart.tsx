@@ -12,7 +12,8 @@ import { fmtG3, type PairRow } from "@/lib/analysis.ts";
 export const CHART_W = 640;
 export const CHART_H = 440;
 
-const PALETTE = ["#1783ff", "#5ca8ff", "#8bc1ff", "#a2cdff", "#c5e0ff"];
+// 低饱和度学术配色（灰蓝 / 赭石 / 灰绿 / 灰红 / 灰紫 / 灰橄榄）
+const PALETTE = ["#7C9EB2", "#D4A373", "#8EB8A0", "#C28E8E", "#A89BBD", "#B5B5A6"];
 const AXIS_TEXT = "rgba(0,0,0,0.6)";
 const TICK_TEXT = "rgba(0,0,0,0.45)";
 const GRID = "rgba(0,0,0,0.13)";
@@ -43,10 +44,10 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
   { levels, means, sds, pairwise, yPadding },
   ref,
 ) {
-  const ml = 72;
+  const ml = 84;
   const mr = 20;
   const mt = 24;
-  const mb = 56;
+  const mb = 64;
   const plotW = CHART_W - ml - mr;
   const plotH = CHART_H - mt - mb;
   const n = levels.length;
@@ -69,10 +70,12 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
   const yMaxPre = ymaxData * (1 + Math.max(0.25, yPadding * pairwise.length));
 
   // ---- find_free_y 移植（x 以组索引为单位，y 以数值为单位；与坐标缩放无关）----
+  // 层间距下限取「星号+p 值两行文字高度」，避免上下两层横线的标注互相挤压
+  const lineH = (19 / plotH) * yMaxPre; // 一行 13px 文字（含行距）折算成数据单位
   const usedSpans: Array<[number, number, number]> = [];
   const findFreeY = (xl: number, xr: number, base: number): number => {
     let h = base;
-    const bump = ymaxData * yPadding;
+    const bump = Math.max(ymaxData * yPadding, 2.7 * lineH);
     while (
       usedSpans.some(([uxl, uxr, uy]) => xl <= uxr && xr >= uxl && Math.abs(h - uy) < bump * 0.9)
     ) {
@@ -96,9 +99,8 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
   });
 
   // ---- 顶部留白自适应：保证最上层横线 + 星号/p 值两行文字完整在画布内 ----
-  const lineH = (16 / plotH) * yMaxPre; // 一行 12px 文字（含行距）折算成数据单位
   const requiredTop = brackets.reduce(
-    (acc, b) => Math.max(acc, b.y + b.dy + ymaxData * 0.012 + (b.sub ? 2.3 : 1.2) * lineH),
+    (acc, b) => Math.max(acc, b.y + b.dy + (b.sub ? 2.8 : 1.5) * lineH),
     0,
   );
   const yMax = Math.max(yMaxPre, requiredTop);
@@ -106,6 +108,8 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
   const step = niceStep(yMax / 4);
   const ticks: number[] = [];
   for (let v = 0; v <= yMax + step * 1e-9; v += step) ticks.push(v);
+  // 保证轴顶不低于 yMax（含最上层横线及其标注），否则会被裁出画布
+  if (ticks[ticks.length - 1] < yMax) ticks.push(ticks[ticks.length - 1] + step);
   const axisMax = ticks[ticks.length - 1];
 
   const X = (i: number): number => ml + (plotW / n) * (i + 0.5);
@@ -139,7 +143,7 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
               strokeDasharray="4 4"
             />
           ) : null}
-          <text x={ml - 8} y={Y(v) + 4} textAnchor="end" fontSize={12} fill={TICK_TEXT}>
+          <text x={ml - 10} y={Y(v) + 5} textAnchor="end" fontSize={14} fill={TICK_TEXT}>
             {fmtTick(v)}
           </text>
         </g>
@@ -149,12 +153,12 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
       <line x1={ml} x2={ml} y1={mt} y2={mt + plotH} stroke={AXIS_TEXT} strokeWidth={0.75} />
       <line x1={ml} x2={CHART_W - mr} y1={mt + plotH} y2={mt + plotH} stroke={AXIS_TEXT} strokeWidth={0.75} />
       <text
-        x={18}
+        x={20}
         y={mt + plotH / 2}
         textAnchor="middle"
-        fontSize={12}
+        fontSize={14}
         fill={AXIS_TEXT}
-        transform={`rotate(-90 18 ${mt + plotH / 2})`}
+        transform={`rotate(-90 20 ${mt + plotH / 2})`}
       >
         Relative mRNA Expression
       </text>
@@ -188,7 +192,7 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
                 <line x1={cx - 5} x2={cx + 5} y1={Y(Math.max(0, m - sd))} y2={Y(Math.max(0, m - sd))} />
               </g>
             ) : null}
-            <text x={cx} y={mt + plotH + 20} textAnchor="middle" fontSize={12} fill={AXIS_TEXT}>
+            <text x={cx} y={mt + plotH + 26} textAnchor="middle" fontSize={14} fill={AXIS_TEXT}>
               {lv}
             </text>
           </g>
@@ -202,7 +206,7 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
         const yTop = Y(b.y + b.dy);
         const yBot = Y(b.y);
         const midX = (px1 + px2) / 2;
-        const labelY = Y(b.y + ymaxData * 0.012) - 2;
+        const labelY = Y(b.y + b.dy) - 8; // 锚点在横线上方 8px，星号再上移一行
         return (
           <g key={b.key}>
             <polyline
@@ -211,13 +215,13 @@ export const BarChart = forwardRef<SVGSVGElement, BarChartProps>(function BarCha
               stroke={BAR_EDGE}
               strokeWidth={1}
             />
-            <text x={midX} y={labelY} textAnchor="middle" fontSize={12} fill={AXIS_TEXT}>
+            <text x={midX} y={labelY} textAnchor="middle" fontSize={13} fill={AXIS_TEXT}>
               {b.sub ? (
                 <>
-                  <tspan x={midX} dy="-1.1em" fontWeight={500}>
+                  <tspan x={midX} dy="-1.1em" fontSize={16} fontWeight={600}>
                     {b.label}
                   </tspan>
-                  <tspan x={midX} dy="1.25em">
+                  <tspan x={midX} dy="1.3em" fontSize={12}>
                     {b.sub}
                   </tspan>
                 </>
