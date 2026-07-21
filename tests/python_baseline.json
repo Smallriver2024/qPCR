@@ -1,0 +1,1439 @@
+{
+ "constants": {
+  "SYNONYMS": {
+   "well": [
+    "well",
+    "well position",
+    "wellposition",
+    "well pos",
+    "pos",
+    "position",
+    "well no",
+    "well number",
+    "no.",
+    "no",
+    "编号",
+    "孔",
+    "孔位",
+    "孔号",
+    "孔位置"
+   ],
+   "sample": [
+    "sample name",
+    "samplename",
+    "sample",
+    "name",
+    "sample id",
+    "样本名称",
+    "样品名称",
+    "样本",
+    "样品",
+    "名称",
+    "样本名",
+    "样品名"
+   ],
+   "target": [
+    "target name",
+    "targetname",
+    "target",
+    "gene",
+    "detector name",
+    "detector",
+    "fluorophore",
+    "fluor",
+    "dye",
+    "reporter",
+    "channel",
+    "靶基因",
+    "目的基因",
+    "基因",
+    "检测基因",
+    "荧光通道",
+    "通道",
+    "荧光",
+    "染料"
+   ],
+   "ct": [
+    "ct",
+    "cт",
+    "cq",
+    "cp",
+    "crossing point",
+    "crossingpoint",
+    "ct值",
+    "cq值",
+    "cp值",
+    "ct 值",
+    "cq 值",
+    "阈值循环数"
+   ]
+  },
+  "CT_FALLBACK": [
+   "ct mean",
+   "cq mean",
+   "cp mean",
+   "平均ct",
+   "平均 ct",
+   "平均cq"
+  ],
+  "UNDETERMINED": [
+   "",
+   "-",
+   "--",
+   "n.a.",
+   "n/a",
+   "na",
+   "nan",
+   "neg",
+   "negative",
+   "no amp",
+   "no amplification",
+   "no cp",
+   "no cq",
+   "no ct",
+   "none",
+   "not detected",
+   "null",
+   "undet",
+   "undeterm",
+   "undetermined",
+   "—",
+   "无",
+   "未检出"
+  ],
+  "BINARY_HINTS": {
+   "eds": "这是 ABI QuantStudio 的实验工程文件（.eds），无法直接解析。请在 QuantStudio 软件中打开实验，选择 File → Export → Results（或导出为 .txt/.xls/.xlsx）后再上传。",
+   "sds": "这是 ABI SDS 系列仪器的实验工程文件（.sds），无法直接解析。请在 SDS 软件中 Export Results 为 .txt/.csv 后再上传。",
+   "pcrd": "这是 Bio-Rad CFX Maestro 的实验工程文件（.pcrd），无法直接解析。请在 CFX Maestro 中打开实验，使用 Export → Custom Export / Export All Data Sheets 导出为 .csv/.txt/.xlsx 后再上传。"
+  }
+ },
+ "files": {
+  "abi_v1_quantstudio.txt": {
+   "reports": [
+    {
+     "file": "abi_v1_quantstudio.txt",
+     "instrument": "ABI/Thermo QuantStudio",
+     "status": "ok",
+     "rows": 12,
+     "targets": [
+      "GAPDH",
+      "MYC"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 ABI/Thermo QuantStudio，解析 12 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "1",
+     "sample": "NC_1",
+     "target": "GAPDH",
+     "ct": 12.118,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "2",
+     "sample": "NC_1",
+     "target": "MYC",
+     "ct": 23.245,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "3",
+     "sample": "NC_2",
+     "target": "GAPDH",
+     "ct": 12.302,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "4",
+     "sample": "NC_2",
+     "target": "MYC",
+     "ct": null,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "5",
+     "sample": "NC_3",
+     "target": "GAPDH",
+     "ct": 12.221,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "6",
+     "sample": "NC_3",
+     "target": "MYC",
+     "ct": 22.987,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "7",
+     "sample": "TreatA_1",
+     "target": "GAPDH",
+     "ct": 12.445,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "8",
+     "sample": "TreatA_1",
+     "target": "MYC",
+     "ct": 21.876,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "9",
+     "sample": "TreatA_2",
+     "target": "GAPDH",
+     "ct": 12.389,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "10",
+     "sample": "TreatA_2",
+     "target": "MYC",
+     "ct": 21.954,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "11",
+     "sample": "TreatA_3",
+     "target": "GAPDH",
+     "ct": 12.402,
+     "source_file": "abi_v1_quantstudio.txt"
+    },
+    {
+     "well": "12",
+     "sample": "TreatA_3",
+     "target": "MYC",
+     "ct": 21.89,
+     "source_file": "abi_v1_quantstudio.txt"
+    }
+   ]
+  },
+  "abi_v2_quantstudio.txt": {
+   "reports": [
+    {
+     "file": "abi_v2_quantstudio.txt",
+     "instrument": "ABI/Thermo QuantStudio",
+     "status": "ok",
+     "rows": 6,
+     "targets": [
+      "GAPDH",
+      "MYC"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 ABI/Thermo QuantStudio，解析 6 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "1",
+     "sample": "NC_1",
+     "target": "GAPDH",
+     "ct": 12.1,
+     "source_file": "abi_v2_quantstudio.txt"
+    },
+    {
+     "well": "2",
+     "sample": "NC_1",
+     "target": "MYC",
+     "ct": 23.2,
+     "source_file": "abi_v2_quantstudio.txt"
+    },
+    {
+     "well": "3",
+     "sample": "NC_2",
+     "target": "GAPDH",
+     "ct": 12.3,
+     "source_file": "abi_v2_quantstudio.txt"
+    },
+    {
+     "well": "4",
+     "sample": "NC_2",
+     "target": "MYC",
+     "ct": 22.8,
+     "source_file": "abi_v2_quantstudio.txt"
+    },
+    {
+     "well": "5",
+     "sample": "TreatA_1",
+     "target": "GAPDH",
+     "ct": 12.4,
+     "source_file": "abi_v2_quantstudio.txt"
+    },
+    {
+     "well": "6",
+     "sample": "TreatA_1",
+     "target": "MYC",
+     "ct": 21.9,
+     "source_file": "abi_v2_quantstudio.txt"
+    }
+   ]
+  },
+  "biorad_cfx.csv": {
+   "reports": [
+    {
+     "file": "biorad_cfx.csv",
+     "instrument": "Bio-Rad CFX",
+     "status": "ok",
+     "rows": 5,
+     "targets": [
+      "GAPDH",
+      "MYC"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 Bio-Rad CFX，解析 5 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "A01",
+     "sample": "NC_1",
+     "target": "GAPDH",
+     "ct": 12.12,
+     "source_file": "biorad_cfx.csv"
+    },
+    {
+     "well": "A02",
+     "sample": "NC_1",
+     "target": "MYC",
+     "ct": 23.57,
+     "source_file": "biorad_cfx.csv"
+    },
+    {
+     "well": "A03",
+     "sample": "NC_2",
+     "target": "GAPDH",
+     "ct": null,
+     "source_file": "biorad_cfx.csv"
+    },
+    {
+     "well": "A05",
+     "sample": "TreatA_1",
+     "target": "GAPDH",
+     "ct": 12.4,
+     "source_file": "biorad_cfx.csv"
+    },
+    {
+     "well": "A06",
+     "sample": "TreatA_1",
+     "target": "MYC",
+     "ct": 21.9,
+     "source_file": "biorad_cfx.csv"
+    }
+   ]
+  },
+  "lc480_GAPDH_533-610.txt": {
+   "reports": [
+    {
+     "file": "lc480_GAPDH_533-610.txt",
+     "instrument": "Roche LightCycler 480",
+     "status": "ok",
+     "rows": 5,
+     "targets": [
+      "LC480通道533-610"
+     ],
+     "needs_target_name": true,
+     "default_target": "LC480通道533-610",
+     "message": "识别为 Roche LightCycler 480，解析 5 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "A1",
+     "sample": "NC_1",
+     "target": "LC480通道533-610",
+     "ct": 12.1,
+     "source_file": "lc480_GAPDH_533-610.txt"
+    },
+    {
+     "well": "A2",
+     "sample": "NC_2",
+     "target": "LC480通道533-610",
+     "ct": 12.3,
+     "source_file": "lc480_GAPDH_533-610.txt"
+    },
+    {
+     "well": "A3",
+     "sample": "NC_3",
+     "target": "LC480通道533-610",
+     "ct": 12.22,
+     "source_file": "lc480_GAPDH_533-610.txt"
+    },
+    {
+     "well": "A4",
+     "sample": "TreatA_1",
+     "target": "LC480通道533-610",
+     "ct": 12.44,
+     "source_file": "lc480_GAPDH_533-610.txt"
+    },
+    {
+     "well": "A5",
+     "sample": "NTC",
+     "target": "LC480通道533-610",
+     "ct": null,
+     "source_file": "lc480_GAPDH_533-610.txt"
+    }
+   ]
+  },
+  "lc480_MYC_465-510.txt": {
+   "reports": [
+    {
+     "file": "lc480_MYC_465-510.txt",
+     "instrument": "Roche LightCycler 480",
+     "status": "ok",
+     "rows": 5,
+     "targets": [
+      "LC480通道465-510"
+     ],
+     "needs_target_name": true,
+     "default_target": "LC480通道465-510",
+     "message": "识别为 Roche LightCycler 480，解析 5 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "A1",
+     "sample": "NC_1",
+     "target": "LC480通道465-510",
+     "ct": 22.45,
+     "source_file": "lc480_MYC_465-510.txt"
+    },
+    {
+     "well": "A2",
+     "sample": "NC_2",
+     "target": "LC480通道465-510",
+     "ct": 23.01,
+     "source_file": "lc480_MYC_465-510.txt"
+    },
+    {
+     "well": "A3",
+     "sample": "NC_3",
+     "target": "LC480通道465-510",
+     "ct": 22.78,
+     "source_file": "lc480_MYC_465-510.txt"
+    },
+    {
+     "well": "A4",
+     "sample": "TreatA_1",
+     "target": "LC480通道465-510",
+     "ct": 22.5,
+     "source_file": "lc480_MYC_465-510.txt"
+    },
+    {
+     "well": "A5",
+     "sample": "NTC",
+     "target": "LC480通道465-510",
+     "ct": null,
+     "source_file": "lc480_MYC_465-510.txt"
+    }
+   ]
+  },
+  "lc96.txt": {
+   "reports": [
+    {
+     "file": "lc96.txt",
+     "instrument": "Roche LightCycler 96",
+     "status": "ok",
+     "rows": 6,
+     "targets": [
+      "GAPDH",
+      "MYC"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 Roche LightCycler 96，解析 6 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "A1",
+     "sample": "NC_1",
+     "target": "GAPDH",
+     "ct": 12.11,
+     "source_file": "lc96.txt"
+    },
+    {
+     "well": "A1",
+     "sample": "NC_1",
+     "target": "MYC",
+     "ct": 23.24,
+     "source_file": "lc96.txt"
+    },
+    {
+     "well": "A2",
+     "sample": "NC_2",
+     "target": "GAPDH",
+     "ct": 12.3,
+     "source_file": "lc96.txt"
+    },
+    {
+     "well": "A2",
+     "sample": "NC_2",
+     "target": "MYC",
+     "ct": 22.99,
+     "source_file": "lc96.txt"
+    },
+    {
+     "well": "A3",
+     "sample": "TreatA_1",
+     "target": "GAPDH",
+     "ct": 12.44,
+     "source_file": "lc96.txt"
+    },
+    {
+     "well": "A3",
+     "sample": "TreatA_1",
+     "target": "MYC",
+     "ct": 21.88,
+     "source_file": "lc96.txt"
+    }
+   ]
+  },
+  "rotor_gene_GAPDH.csv": {
+   "reports": [
+    {
+     "file": "rotor_gene_GAPDH.csv",
+     "instrument": "Qiagen Rotor-Gene Q",
+     "status": "ok",
+     "rows": 4,
+     "targets": [
+      "rotor_gene_GAPDH"
+     ],
+     "needs_target_name": true,
+     "default_target": "rotor_gene_GAPDH",
+     "message": "识别为 Qiagen Rotor-Gene Q，解析 4 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "1",
+     "sample": "NC_1",
+     "target": "rotor_gene_GAPDH",
+     "ct": 14.21,
+     "source_file": "rotor_gene_GAPDH.csv"
+    },
+    {
+     "well": "2",
+     "sample": "NC_2",
+     "target": "rotor_gene_GAPDH",
+     "ct": 14.33,
+     "source_file": "rotor_gene_GAPDH.csv"
+    },
+    {
+     "well": "3",
+     "sample": "NC_3",
+     "target": "rotor_gene_GAPDH",
+     "ct": 14.18,
+     "source_file": "rotor_gene_GAPDH.csv"
+    },
+    {
+     "well": "4",
+     "sample": "TreatA_1",
+     "target": "rotor_gene_GAPDH",
+     "ct": 14.42,
+     "source_file": "rotor_gene_GAPDH.csv"
+    }
+   ]
+  },
+  "gentier_国产.csv": {
+   "reports": [
+    {
+     "file": "gentier_国产.csv",
+     "instrument": "国产仪器/通用格式（中文表头）",
+     "status": "ok",
+     "rows": 5,
+     "targets": [
+      "GAPDH",
+      "目的基因"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 国产仪器/通用格式（中文表头），解析 5 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "A01",
+     "sample": "样本1",
+     "target": "GAPDH",
+     "ct": 13.52,
+     "source_file": "gentier_国产.csv"
+    },
+    {
+     "well": "A02",
+     "sample": "样本1",
+     "target": "目的基因",
+     "ct": 24.15,
+     "source_file": "gentier_国产.csv"
+    },
+    {
+     "well": "A03",
+     "sample": "样本2",
+     "target": "GAPDH",
+     "ct": 13.48,
+     "source_file": "gentier_国产.csv"
+    },
+    {
+     "well": "A04",
+     "sample": "样本2",
+     "target": "目的基因",
+     "ct": null,
+     "source_file": "gentier_国产.csv"
+    },
+    {
+     "well": "A05",
+     "sample": "样本3",
+     "target": "GAPDH",
+     "ct": 13.6,
+     "source_file": "gentier_国产.csv"
+    }
+   ]
+  },
+  "oldsoftware_results.xls": {
+   "reports": [
+    {
+     "file": "oldsoftware_results.xls",
+     "instrument": "ABI/Thermo QuantStudio (v2.x)",
+     "status": "ok",
+     "rows": 4,
+     "targets": [
+      "GAPDH",
+      "MYC"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 ABI/Thermo QuantStudio (v2.x)，解析 4 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "A1",
+     "sample": "NC_1",
+     "target": "GAPDH",
+     "ct": 12.15,
+     "source_file": "oldsoftware_results.xls"
+    },
+    {
+     "well": "A2",
+     "sample": "NC_1",
+     "target": "MYC",
+     "ct": 23.41,
+     "source_file": "oldsoftware_results.xls"
+    },
+    {
+     "well": "A3",
+     "sample": "TreatA_1",
+     "target": "GAPDH",
+     "ct": 12.33,
+     "source_file": "oldsoftware_results.xls"
+    },
+    {
+     "well": "A4",
+     "sample": "TreatA_1",
+     "target": "MYC",
+     "ct": null,
+     "source_file": "oldsoftware_results.xls"
+    }
+   ]
+  },
+  "ariamx_results.xlsx": {
+   "reports": [
+    {
+     "file": "ariamx_results.xlsx",
+     "instrument": "ABI/Thermo QuantStudio",
+     "status": "ok",
+     "rows": 6,
+     "targets": [
+      "GAPDH",
+      "MYC"
+     ],
+     "needs_target_name": false,
+     "default_target": "",
+     "message": "识别为 ABI/Thermo QuantStudio，解析 6 行。"
+    }
+   ],
+   "rows": [
+    {
+     "well": "1",
+     "sample": "NC_1",
+     "target": "GAPDH",
+     "ct": 12.12,
+     "source_file": "ariamx_results.xlsx"
+    },
+    {
+     "well": "2",
+     "sample": "NC_1",
+     "target": "MYC",
+     "ct": 23.25,
+     "source_file": "ariamx_results.xlsx"
+    },
+    {
+     "well": "3",
+     "sample": "NC_2",
+     "target": "GAPDH",
+     "ct": 12.3,
+     "source_file": "ariamx_results.xlsx"
+    },
+    {
+     "well": "4",
+     "sample": "NC_2",
+     "target": "MYC",
+     "ct": null,
+     "source_file": "ariamx_results.xlsx"
+    },
+    {
+     "well": "5",
+     "sample": "TreatA_1",
+     "target": "GAPDH",
+     "ct": 12.44,
+     "source_file": "ariamx_results.xlsx"
+    },
+    {
+     "well": "6",
+     "sample": "TreatA_1",
+     "target": "MYC",
+     "ct": 21.88,
+     "source_file": "ariamx_results.xlsx"
+    }
+   ]
+  }
+ },
+ "multi": {
+  "reports": [
+   {
+    "file": "abi_v1_quantstudio.txt",
+    "instrument": "ABI/Thermo QuantStudio",
+    "status": "ok",
+    "rows": 12,
+    "targets": [
+     "GAPDH",
+     "MYC"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "识别为 ABI/Thermo QuantStudio，解析 12 行。"
+   },
+   {
+    "file": "abi_v2_quantstudio.txt",
+    "instrument": "ABI/Thermo QuantStudio",
+    "status": "ok",
+    "rows": 6,
+    "targets": [
+     "GAPDH",
+     "MYC"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "识别为 ABI/Thermo QuantStudio，解析 6 行。"
+   },
+   {
+    "file": "biorad_cfx.csv",
+    "instrument": "Bio-Rad CFX",
+    "status": "ok",
+    "rows": 5,
+    "targets": [
+     "GAPDH",
+     "MYC"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "识别为 Bio-Rad CFX，解析 5 行。"
+   },
+   {
+    "file": "lc480_GAPDH_533-610.txt",
+    "instrument": "Roche LightCycler 480",
+    "status": "ok",
+    "rows": 5,
+    "targets": [
+     "LC480通道533-610"
+    ],
+    "needs_target_name": true,
+    "default_target": "LC480通道533-610",
+    "message": "识别为 Roche LightCycler 480，解析 5 行。"
+   },
+   {
+    "file": "lc480_MYC_465-510.txt",
+    "instrument": "Roche LightCycler 480",
+    "status": "ok",
+    "rows": 5,
+    "targets": [
+     "LC480通道465-510"
+    ],
+    "needs_target_name": true,
+    "default_target": "LC480通道465-510",
+    "message": "识别为 Roche LightCycler 480，解析 5 行。"
+   },
+   {
+    "file": "lc96.txt",
+    "instrument": "Roche LightCycler 96",
+    "status": "ok",
+    "rows": 6,
+    "targets": [
+     "GAPDH",
+     "MYC"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "识别为 Roche LightCycler 96，解析 6 行。"
+   },
+   {
+    "file": "rotor_gene_GAPDH.csv",
+    "instrument": "Qiagen Rotor-Gene Q",
+    "status": "ok",
+    "rows": 4,
+    "targets": [
+     "rotor_gene_GAPDH"
+    ],
+    "needs_target_name": true,
+    "default_target": "rotor_gene_GAPDH",
+    "message": "识别为 Qiagen Rotor-Gene Q，解析 4 行。"
+   },
+   {
+    "file": "gentier_国产.csv",
+    "instrument": "国产仪器/通用格式（中文表头）",
+    "status": "ok",
+    "rows": 5,
+    "targets": [
+     "GAPDH",
+     "目的基因"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "识别为 国产仪器/通用格式（中文表头），解析 5 行。"
+   },
+   {
+    "file": "oldsoftware_results.xls",
+    "instrument": "ABI/Thermo QuantStudio (v2.x)",
+    "status": "ok",
+    "rows": 4,
+    "targets": [
+     "GAPDH",
+     "MYC"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "识别为 ABI/Thermo QuantStudio (v2.x)，解析 4 行。"
+   }
+  ],
+  "rows": [
+   {
+    "well": "1",
+    "sample": "NC_1",
+    "target": "GAPDH",
+    "ct": 12.118,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "2",
+    "sample": "NC_1",
+    "target": "MYC",
+    "ct": 23.245,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "3",
+    "sample": "NC_2",
+    "target": "GAPDH",
+    "ct": 12.302,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "4",
+    "sample": "NC_2",
+    "target": "MYC",
+    "ct": null,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "5",
+    "sample": "NC_3",
+    "target": "GAPDH",
+    "ct": 12.221,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "6",
+    "sample": "NC_3",
+    "target": "MYC",
+    "ct": 22.987,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "7",
+    "sample": "TreatA_1",
+    "target": "GAPDH",
+    "ct": 12.445,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "8",
+    "sample": "TreatA_1",
+    "target": "MYC",
+    "ct": 21.876,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "9",
+    "sample": "TreatA_2",
+    "target": "GAPDH",
+    "ct": 12.389,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "10",
+    "sample": "TreatA_2",
+    "target": "MYC",
+    "ct": 21.954,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "11",
+    "sample": "TreatA_3",
+    "target": "GAPDH",
+    "ct": 12.402,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "12",
+    "sample": "TreatA_3",
+    "target": "MYC",
+    "ct": 21.89,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "1",
+    "sample": "NC_1",
+    "target": "GAPDH",
+    "ct": 12.1,
+    "source_file": "abi_v2_quantstudio.txt"
+   },
+   {
+    "well": "2",
+    "sample": "NC_1",
+    "target": "MYC",
+    "ct": 23.2,
+    "source_file": "abi_v2_quantstudio.txt"
+   },
+   {
+    "well": "3",
+    "sample": "NC_2",
+    "target": "GAPDH",
+    "ct": 12.3,
+    "source_file": "abi_v2_quantstudio.txt"
+   },
+   {
+    "well": "4",
+    "sample": "NC_2",
+    "target": "MYC",
+    "ct": 22.8,
+    "source_file": "abi_v2_quantstudio.txt"
+   },
+   {
+    "well": "5",
+    "sample": "TreatA_1",
+    "target": "GAPDH",
+    "ct": 12.4,
+    "source_file": "abi_v2_quantstudio.txt"
+   },
+   {
+    "well": "6",
+    "sample": "TreatA_1",
+    "target": "MYC",
+    "ct": 21.9,
+    "source_file": "abi_v2_quantstudio.txt"
+   },
+   {
+    "well": "A01",
+    "sample": "NC_1",
+    "target": "GAPDH",
+    "ct": 12.12,
+    "source_file": "biorad_cfx.csv"
+   },
+   {
+    "well": "A02",
+    "sample": "NC_1",
+    "target": "MYC",
+    "ct": 23.57,
+    "source_file": "biorad_cfx.csv"
+   },
+   {
+    "well": "A03",
+    "sample": "NC_2",
+    "target": "GAPDH",
+    "ct": null,
+    "source_file": "biorad_cfx.csv"
+   },
+   {
+    "well": "A05",
+    "sample": "TreatA_1",
+    "target": "GAPDH",
+    "ct": 12.4,
+    "source_file": "biorad_cfx.csv"
+   },
+   {
+    "well": "A06",
+    "sample": "TreatA_1",
+    "target": "MYC",
+    "ct": 21.9,
+    "source_file": "biorad_cfx.csv"
+   },
+   {
+    "well": "A1",
+    "sample": "NC_1",
+    "target": "LC480通道533-610",
+    "ct": 12.1,
+    "source_file": "lc480_GAPDH_533-610.txt"
+   },
+   {
+    "well": "A2",
+    "sample": "NC_2",
+    "target": "LC480通道533-610",
+    "ct": 12.3,
+    "source_file": "lc480_GAPDH_533-610.txt"
+   },
+   {
+    "well": "A3",
+    "sample": "NC_3",
+    "target": "LC480通道533-610",
+    "ct": 12.22,
+    "source_file": "lc480_GAPDH_533-610.txt"
+   },
+   {
+    "well": "A4",
+    "sample": "TreatA_1",
+    "target": "LC480通道533-610",
+    "ct": 12.44,
+    "source_file": "lc480_GAPDH_533-610.txt"
+   },
+   {
+    "well": "A5",
+    "sample": "NTC",
+    "target": "LC480通道533-610",
+    "ct": null,
+    "source_file": "lc480_GAPDH_533-610.txt"
+   },
+   {
+    "well": "A1",
+    "sample": "NC_1",
+    "target": "LC480通道465-510",
+    "ct": 22.45,
+    "source_file": "lc480_MYC_465-510.txt"
+   },
+   {
+    "well": "A2",
+    "sample": "NC_2",
+    "target": "LC480通道465-510",
+    "ct": 23.01,
+    "source_file": "lc480_MYC_465-510.txt"
+   },
+   {
+    "well": "A3",
+    "sample": "NC_3",
+    "target": "LC480通道465-510",
+    "ct": 22.78,
+    "source_file": "lc480_MYC_465-510.txt"
+   },
+   {
+    "well": "A4",
+    "sample": "TreatA_1",
+    "target": "LC480通道465-510",
+    "ct": 22.5,
+    "source_file": "lc480_MYC_465-510.txt"
+   },
+   {
+    "well": "A5",
+    "sample": "NTC",
+    "target": "LC480通道465-510",
+    "ct": null,
+    "source_file": "lc480_MYC_465-510.txt"
+   },
+   {
+    "well": "A1",
+    "sample": "NC_1",
+    "target": "GAPDH",
+    "ct": 12.11,
+    "source_file": "lc96.txt"
+   },
+   {
+    "well": "A1",
+    "sample": "NC_1",
+    "target": "MYC",
+    "ct": 23.24,
+    "source_file": "lc96.txt"
+   },
+   {
+    "well": "A2",
+    "sample": "NC_2",
+    "target": "GAPDH",
+    "ct": 12.3,
+    "source_file": "lc96.txt"
+   },
+   {
+    "well": "A2",
+    "sample": "NC_2",
+    "target": "MYC",
+    "ct": 22.99,
+    "source_file": "lc96.txt"
+   },
+   {
+    "well": "A3",
+    "sample": "TreatA_1",
+    "target": "GAPDH",
+    "ct": 12.44,
+    "source_file": "lc96.txt"
+   },
+   {
+    "well": "A3",
+    "sample": "TreatA_1",
+    "target": "MYC",
+    "ct": 21.88,
+    "source_file": "lc96.txt"
+   },
+   {
+    "well": "1",
+    "sample": "NC_1",
+    "target": "rotor_gene_GAPDH",
+    "ct": 14.21,
+    "source_file": "rotor_gene_GAPDH.csv"
+   },
+   {
+    "well": "2",
+    "sample": "NC_2",
+    "target": "rotor_gene_GAPDH",
+    "ct": 14.33,
+    "source_file": "rotor_gene_GAPDH.csv"
+   },
+   {
+    "well": "3",
+    "sample": "NC_3",
+    "target": "rotor_gene_GAPDH",
+    "ct": 14.18,
+    "source_file": "rotor_gene_GAPDH.csv"
+   },
+   {
+    "well": "4",
+    "sample": "TreatA_1",
+    "target": "rotor_gene_GAPDH",
+    "ct": 14.42,
+    "source_file": "rotor_gene_GAPDH.csv"
+   },
+   {
+    "well": "A01",
+    "sample": "样本1",
+    "target": "GAPDH",
+    "ct": 13.52,
+    "source_file": "gentier_国产.csv"
+   },
+   {
+    "well": "A02",
+    "sample": "样本1",
+    "target": "目的基因",
+    "ct": 24.15,
+    "source_file": "gentier_国产.csv"
+   },
+   {
+    "well": "A03",
+    "sample": "样本2",
+    "target": "GAPDH",
+    "ct": 13.48,
+    "source_file": "gentier_国产.csv"
+   },
+   {
+    "well": "A04",
+    "sample": "样本2",
+    "target": "目的基因",
+    "ct": null,
+    "source_file": "gentier_国产.csv"
+   },
+   {
+    "well": "A05",
+    "sample": "样本3",
+    "target": "GAPDH",
+    "ct": 13.6,
+    "source_file": "gentier_国产.csv"
+   },
+   {
+    "well": "A1",
+    "sample": "NC_1",
+    "target": "GAPDH",
+    "ct": 12.15,
+    "source_file": "oldsoftware_results.xls"
+   },
+   {
+    "well": "A2",
+    "sample": "NC_1",
+    "target": "MYC",
+    "ct": 23.41,
+    "source_file": "oldsoftware_results.xls"
+   },
+   {
+    "well": "A3",
+    "sample": "TreatA_1",
+    "target": "GAPDH",
+    "ct": 12.33,
+    "source_file": "oldsoftware_results.xls"
+   },
+   {
+    "well": "A4",
+    "sample": "TreatA_1",
+    "target": "MYC",
+    "ct": null,
+    "source_file": "oldsoftware_results.xls"
+   }
+  ]
+ },
+ "manual": {
+  "reports": [
+   {
+    "file": "abi_v1_quantstudio.txt",
+    "instrument": "ABI/Thermo QuantStudio（手动指定）",
+    "status": "ok",
+    "rows": 12,
+    "targets": [
+     "GAPDH",
+     "MYC"
+    ],
+    "needs_target_name": false,
+    "default_target": "",
+    "message": "手动解析成功，共 12 行。"
+   }
+  ],
+  "rows": [
+   {
+    "well": "1",
+    "sample": "NC_1",
+    "target": "GAPDH",
+    "ct": 12.118,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "2",
+    "sample": "NC_1",
+    "target": "MYC",
+    "ct": 23.245,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "3",
+    "sample": "NC_2",
+    "target": "GAPDH",
+    "ct": 12.302,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "4",
+    "sample": "NC_2",
+    "target": "MYC",
+    "ct": null,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "5",
+    "sample": "NC_3",
+    "target": "GAPDH",
+    "ct": 12.221,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "6",
+    "sample": "NC_3",
+    "target": "MYC",
+    "ct": 22.987,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "7",
+    "sample": "TreatA_1",
+    "target": "GAPDH",
+    "ct": 12.445,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "8",
+    "sample": "TreatA_1",
+    "target": "MYC",
+    "ct": 21.876,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "9",
+    "sample": "TreatA_2",
+    "target": "GAPDH",
+    "ct": 12.389,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "10",
+    "sample": "TreatA_2",
+    "target": "MYC",
+    "ct": 21.954,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "11",
+    "sample": "TreatA_3",
+    "target": "GAPDH",
+    "ct": 12.402,
+    "source_file": "abi_v1_quantstudio.txt"
+   },
+   {
+    "well": "12",
+    "sample": "TreatA_3",
+    "target": "MYC",
+    "ct": 21.89,
+    "source_file": "abi_v1_quantstudio.txt"
+   }
+  ]
+ },
+ "helpers": {
+  "group_identity": {
+   "NC_1": "NC_1",
+   "NC_2": "NC_2",
+   "NC_3": "NC_3",
+   "NTC": "NTC",
+   "TreatA_1": "TreatA_1",
+   "TreatA_2": "TreatA_2",
+   "TreatA_3": "TreatA_3",
+   "样本1": "样本1",
+   "样本2": "样本2",
+   "样本3": "样本3"
+  },
+  "group_strip": {
+   "NC_1": "NC",
+   "NC_2": "NC",
+   "NC_3": "NC",
+   "NTC": "NTC",
+   "TreatA_1": "TreatA",
+   "TreatA_2": "TreatA",
+   "TreatA_3": "TreatA",
+   "样本1": "样本",
+   "样本2": "样本",
+   "样本3": "样本"
+  },
+  "group_prefix": {
+   "NC_1": "NC",
+   "NC_2": "NC",
+   "NC_3": "NC",
+   "NTC": "NTC",
+   "TreatA_1": "TreatA",
+   "TreatA_2": "TreatA",
+   "TreatA_3": "TreatA",
+   "样本1": "样本1",
+   "样本2": "样本2",
+   "样本3": "样本3"
+  },
+  "hk_targets": [
+   "GAPDH",
+   "MYC",
+   "LC480通道465-510",
+   "LC480通道533-610",
+   "rotor_gene_GAPDH",
+   "目的基因"
+  ],
+  "wide_columns": [
+   "sample",
+   "GAPDH",
+   "LC480通道465-510",
+   "LC480通道533-610",
+   "MYC",
+   "rotor_gene_GAPDH",
+   "目的基因"
+  ],
+  "wide_rows": [
+   {
+    "sample": "NC_1",
+    "GAPDH": 12.1196,
+    "LC480通道465-510": 22.45,
+    "LC480通道533-610": 12.1,
+    "MYC": 23.333,
+    "rotor_gene_GAPDH": 14.21,
+    "目的基因": null
+   },
+   {
+    "sample": "NC_2",
+    "GAPDH": 12.300666666666666,
+    "LC480通道465-510": 23.01,
+    "LC480通道533-610": 12.3,
+    "MYC": 22.895,
+    "rotor_gene_GAPDH": 14.33,
+    "目的基因": null
+   },
+   {
+    "sample": "NC_3",
+    "GAPDH": 12.221,
+    "LC480通道465-510": 22.78,
+    "LC480通道533-610": 12.22,
+    "MYC": 22.987,
+    "rotor_gene_GAPDH": 14.18,
+    "目的基因": null
+   },
+   {
+    "sample": "NTC",
+    "GAPDH": null,
+    "LC480通道465-510": null,
+    "LC480通道533-610": null,
+    "MYC": null,
+    "rotor_gene_GAPDH": null,
+    "目的基因": null
+   },
+   {
+    "sample": "TreatA_1",
+    "GAPDH": 12.403,
+    "LC480通道465-510": 22.5,
+    "LC480通道533-610": 12.44,
+    "MYC": 21.889,
+    "rotor_gene_GAPDH": 14.42,
+    "目的基因": null
+   },
+   {
+    "sample": "TreatA_2",
+    "GAPDH": 12.389,
+    "LC480通道465-510": null,
+    "LC480通道533-610": null,
+    "MYC": 21.954,
+    "rotor_gene_GAPDH": null,
+    "目的基因": null
+   },
+   {
+    "sample": "TreatA_3",
+    "GAPDH": 12.402,
+    "LC480通道465-510": null,
+    "LC480通道533-610": null,
+    "MYC": 21.89,
+    "rotor_gene_GAPDH": null,
+    "目的基因": null
+   },
+   {
+    "sample": "样本1",
+    "GAPDH": 13.52,
+    "LC480通道465-510": null,
+    "LC480通道533-610": null,
+    "MYC": null,
+    "rotor_gene_GAPDH": null,
+    "目的基因": 24.15
+   },
+   {
+    "sample": "样本2",
+    "GAPDH": 13.48,
+    "LC480通道465-510": null,
+    "LC480通道533-610": null,
+    "MYC": null,
+    "rotor_gene_GAPDH": null,
+    "目的基因": null
+   },
+   {
+    "sample": "样本3",
+    "GAPDH": 13.6,
+    "LC480通道465-510": null,
+    "LC480通道533-610": null,
+    "MYC": null,
+    "rotor_gene_GAPDH": null,
+    "目的基因": null
+   }
+  ]
+ }
+}
